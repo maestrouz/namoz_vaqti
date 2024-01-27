@@ -26,6 +26,7 @@ main{
 
 }
 #select {
+  z-index: 111;
   width: 110px;
   height: 40px;
   text-transform: uppercase;
@@ -106,6 +107,7 @@ img{
     color: rgb(0, 0, 0);
   }
   p{
+    margin-top: 5px;
     font-size: 16px;
     font-family: "Nunito", sans-serif;
     color: rgb(0, 0, 0);
@@ -160,5 +162,8 @@ img{
     margin-top: 1100px;
     background-image: none;
     display: block;
+    p{
+      text-align: center;
+    }
   }
 }
