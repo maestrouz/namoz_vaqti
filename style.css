@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 *{
   margin: 0 auto;
@@ -13,7 +14,7 @@ body {
 main{
   width: 100%;
   height: 40vh;
-  background: url(./Img/tun.png);
+  background: url(./Img/kun.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -61,7 +62,7 @@ h3 {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 4px dashed #1cc465;
+  border: 4px double #1cc465;
 }
 
 
@@ -81,11 +82,11 @@ img{
 }
 
 .week{
-  margin-top: 1%;
+  /* margin-top: 15.8%; */
   display: flex;
   width: 100%;
   height: 40vh;
-  background-image: url(./Img/kun.png);
+  background-image: url(./Img/asr.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 55;
@@ -94,10 +95,20 @@ img{
     font-size: 18px;
   }
   .namoz-vaqtlari-item{
-    border: 2px dashed #0000007a;
+    border: 4px double #0000007a;
     border-radius: 5px;
     background: transparent;
     backdrop-filter: blur(10px);
+  }
+  h3{
+    margin-top: -4px;
+    font-family: "Nunito", sans-serif;
+    color: rgb(0, 0, 0);
+  }
+  p{
+    font-size: 16px;
+    font-family: "Nunito", sans-serif;
+    color: rgb(0, 0, 0);
   }
   .line{
     display: none;
@@ -146,10 +157,8 @@ img{
 
   }
   .week{
-    margin-top: 50px;
+    margin-top: 1100px;
     background-image: none;
     display: block;
-    h3{
-    }
   }
 }
