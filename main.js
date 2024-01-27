@@ -11,7 +11,6 @@ select.addEventListener("change", (e) => {
       const { tong_saharlik, quyosh, peshin, asr, shom_iftor, hufton } =
         data.times;
       box.innerHTML = `
-      <img class="line" src="./line.png" alt="line">
       <div class="time1">
       <div class="time_in"><h2>Tong: <h3>${tong_saharlik}</h3></h2></div>
     </div>
@@ -39,25 +38,35 @@ select.addEventListener("change", (e) => {
 });
 
 
-  fetch('https://islomapi.uz/api/present/week')
-        .then(response => response.json())
-        .then(data => {
-            const namozVaqtlari = document.getElementById("namoz-vaqtlari");
+document.addEventListener("DOMContentLoaded", function () {
+  const weekSection = document.querySelector(".week");
+  const select = document.getElementById("select");
 
-            data.forEach((item, index) => {
-                namozVaqtlari.innerHTML += `
-                    <div class="namoz-vaqtlari-item">
-                        <h3>${item.region}</h3>
-                        <p><strong>Sana:</strong> ${item.date}</p>
-                        <p><strong>Kun:</strong> ${item.weekday}</p>
-                        <p><strong>Tong Saharlik:</strong> ${item.times.tong_saharlik}</p>
-                        <p><strong>Quyosh:</strong> ${item.times.quyosh}</p>
-                        <p><strong>Peshin:</strong> ${item.times.peshin}</p>
-                        <p><strong>Asr:</strong> ${item.times.asr}</p>
-                        <p><strong>Shom Iftor:</strong> ${item.times.shom_iftor}</p>
-                        <p><strong>Hufton:</strong> ${item.times.hufton}</p>
-                    </div>
-                `;
-            });
-        })
-        .catch(error => console.error('Xatolik:', error));
+  select.addEventListener("change", function () {
+      const selectedRegion = select.value;
+      const url = `https://islomapi.uz/api/present/week?region=${selectedRegion}`;
+
+      fetch(url)
+          .then(response => response.json())
+          .then(data => {
+              weekSection.innerHTML = ""; 
+
+              data.forEach((item, index) => {
+                  weekSection.innerHTML += `
+                      <div class="namoz-vaqtlari-item">
+                          <h3>${item.region}</h3>
+                          <p><strong>Sana:</strong> ${item.date}</p>
+                          <p><strong>Kun:</strong> ${item.weekday}</p>
+                          <p><strong>Tong Saharlik:</strong> ${item.times.tong_saharlik}</p>
+                          <p><strong>Quyosh:</strong> ${item.times.quyosh}</p>
+                          <p><strong>Peshin:</strong> ${item.times.peshin}</p>
+                          <p><strong>Asr:</strong> ${item.times.asr}</p>
+                          <p><strong>Shom Iftor:</strong> ${item.times.shom_iftor}</p>
+                          <p><strong>Hufton:</strong> ${item.times.hufton}</p>
+                      </div>
+                  `;
+              });
+          })
+          .catch(error => console.error('Xatolik:', error));
+  });
+});
