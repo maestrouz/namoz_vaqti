@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
               data.forEach((item, index) => {
                   weekSection.innerHTML += `
                       <div class="namoz-vaqtlari-item">
-                          <h3>${item.region}</h3>
+
                           <p><strong>Sana:</strong> ${item.date}</p>
                           <p><strong>Kun:</strong> ${item.weekday}</p>
                           <p><strong>Tong Saharlik:</strong> ${item.times.tong_saharlik}</p>
